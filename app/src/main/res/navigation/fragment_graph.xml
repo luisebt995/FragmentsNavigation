@@ -32,5 +32,23 @@
         android:id="@+id/thirdFragment"
         android:name="com.example.fragmentsnavigation.ThirdFragment"
         android:label="fragment_third"
-        tools:layout="@layout/fragment_third" />
+        tools:layout="@layout/fragment_third" >
+        <action
+            android:id="@+id/action_thirdFragment_to_secondFragment"
+            app:destination="@id/secondFragment">
+            <argument
+                android:name="name"
+                app:argType="string"
+                app:nullable="true"
+                android:defaultValue="Prueba Desde Action" />
+        </action>
+        <action
+            android:id="@+id/action_thirdFragment_to_firstFragment"
+            app:destination="@id/firstFragment" />
+        <argument
+            android:name="province"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
 </navigation>
