@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.fragment.findNavController
+import com.airbnb.lottie.LottieAnimationView
 
 class FirstFragment : Fragment() {
 
@@ -18,9 +19,15 @@ class FirstFragment : Fragment() {
 
         val root = inflater.inflate(R.layout.fragment_first, container, false)
         val btnCLick = root.findViewById<Button>(R.id.btnClick)
+        val btnAnimation = root.findViewById<LottieAnimationView>(R.id.btnAnimation)
 
         btnCLick.setOnClickListener {
-            val action = FirstFragmentDirections.actionFirstFragmentToSecondFragment()
+            val action = FirstFragmentDirections.actionFirstFragmentToSecondFragment("Prueba 1")
+            findNavController().navigate(action)
+        }
+
+        btnAnimation.setOnClickListener {
+            val action = FirstFragmentDirections.actionFirstFragmentToSecondFragment("Prueba 1 Animation")
             findNavController().navigate(action)
         }
 
